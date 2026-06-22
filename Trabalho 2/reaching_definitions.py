@@ -1,4 +1,4 @@
-# Q2 - Reaching Definitions (Definições Alcançantes)
+# Q2 - Reaching Definitions
 import os
 
 from longevidade import ler_entrada, extrair_variaveis
@@ -7,10 +7,10 @@ from longevidade import ler_entrada, extrair_variaveis
 class Definicao:
     
     def __init__(self, identificador, variavel, bloco_num, instrucao):
-        self.id = identificador          # ex: 'd1', 'd2', ...
-        self.variavel = variavel         # variável definida (lado esquerdo do '=')
-        self.bloco_num = bloco_num       # bloco onde a definição ocorre
-        self.instrucao = instrucao       # texto da instrução, para referência
+        self.id = identificador          
+        self.variavel = variavel         
+        self.bloco_num = bloco_num       
+        self.instrucao = instrucao
 
     def __repr__(self):
         return self.id
