@@ -132,13 +132,13 @@ def compute_available_expressions(order, blocks):
             def_var, expr_text, _ = parse_statement(raw)
             if def_var is None:
                 continue
-            for e in universe_order:
-                if def_var in universe_operands[e] and e != expr_text:
-                    kill_set.add(e)
-                    gen_set.discard(e)
             if expr_text is not None:
                 gen_set.add(expr_text)
                 kill_set.discard(expr_text)
+            for e in universe_order:
+                if def_var in universe_operands[e]:
+                    kill_set.add(e)
+                    gen_set.discard(e)
         gen[bid] = gen_set
         kill[bid] = kill_set
  
