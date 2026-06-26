@@ -152,6 +152,8 @@ def main():
         with open(caminho_saida, 'w', encoding='utf-8') as f:
             f.write(resultado)
 
+        print(f"'{caminho_entrada}' -> '{caminho_saida}'")
+
 
 if __name__ == "__main__":
     main()
